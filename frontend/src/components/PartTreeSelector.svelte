@@ -14,7 +14,7 @@
     {
       id: 'shelves',
       name: 'Shelves',
-      parts: ['shelf', 'hole_shelf', 'slot_shelf', 'gridfinity_shelf'],
+      parts: ['shelf', 'shelf_bracket', 'hole_shelf', 'slot_shelf', 'gridfinity_shelf'],
     },
     {
       id: 'accessories',
@@ -30,6 +30,7 @@
     'tile-stack': 'Tile Stack',
     shelf: 'Simple Shelf',
     mount: 'Hanger Mount',
+    shelf_bracket: 'Shelf Bracket',
     cableclip: 'Cable Clip',
     gridfinity_bin: 'Gridfinity Bin',
   };

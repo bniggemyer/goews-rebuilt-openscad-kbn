@@ -46,7 +46,7 @@ OPENSCAD_ARGS = --backend manifold
 
 BUILD_DIR = build
 
-all: tiles grid-tiles bolts hooks shelves hole-shelves slot-shelves bins gridfinity-bins cups
+all: tiles grid-tiles bolts hooks shelves shelf-brackets hole-shelves slot-shelves bins gridfinity-bins cups
 .PHONY: all
 
 $(BUILD_DIR):

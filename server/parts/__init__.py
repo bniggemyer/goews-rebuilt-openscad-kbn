@@ -10,6 +10,7 @@ from server.parts import hook
 from server.parts import mount
 from server.parts import rack
 from server.parts import shelf
+from server.parts import shelf_bracket
 from server.parts import tile
 
 __all__ = [
@@ -23,5 +24,6 @@ __all__ = [
     "mount",
     "rack",
     "shelf",
+    "shelf_bracket",
     "tile",
 ]
