@@ -114,72 +114,72 @@ class TestMakeShelfBracketFilename:
     def test_default_shelf_bracket(self):
         """Test filename for default shelf bracket."""
         body = ShelfBracketDefinition()
-        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120-original.stl"
+        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120x41.5-original.stl"
 
     def test_custom_dimensions(self):
         """Test filename with custom dimensions."""
         body = ShelfBracketDefinition(height_units=2, depth=80)
-        assert make_shelf_bracket_filename(body) == "shelf-bracket-2x80.0-original.stl"
+        assert make_shelf_bracket_filename(body) == "shelf-bracket-2x80.0x41.5-original.stl"
 
     def test_thicker_cleats_variant(self):
         """Test filename with thicker cleats variant."""
         body = ShelfBracketDefinition(variant=Variant.THICKER_CLEATS)
-        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120-thicker_cleats.stl"
+        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120x41.5-thicker_cleats.stl"
 
     def test_custom_width(self):
         """Test filename with custom width."""
         body = ShelfBracketDefinition(width=83.5)
-        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120-original-width_83.5.stl"
+        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120x83.5-original.stl"
 
     def test_custom_top_thickness(self):
         """Test filename with custom top_thickness."""
         body = ShelfBracketDefinition(top_thickness=5)
-        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120-original-top_thickness_5.0.stl"
+        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120x41.5-original-top_thickness_5.0.stl"
 
     def test_custom_plate_thickness(self):
         """Test filename with custom plate_thickness."""
         body = ShelfBracketDefinition(plate_thickness=4)
-        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120-original-plate_thickness_4.0.stl"
+        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120x41.5-original-plate_thickness_4.0.stl"
 
     def test_custom_supports(self):
         """Test filename with custom number of supports."""
         body = ShelfBracketDefinition(supports=3)
-        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120-original-supports_3.stl"
+        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120x41.5-original-supports_3.stl"
 
     def test_custom_support_thickness(self):
         """Test filename with custom support_thickness."""
         body = ShelfBracketDefinition(support_thickness=5)
-        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120-original-support_thickness_5.0.stl"
+        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120x41.5-original-support_thickness_5.0.stl"
 
     def test_custom_rear_gusset(self):
         """Test filename with custom rear_gusset."""
         body = ShelfBracketDefinition(rear_gusset=3)
-        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120-original-rear_gusset_3.0.stl"
+        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120x41.5-original-rear_gusset_3.0.stl"
 
     def test_custom_support_gusset(self):
         """Test filename with custom support_gusset."""
         body = ShelfBracketDefinition(support_gusset=0)
-        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120-original-support_gusset_0.0.stl"
+        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120x41.5-original-support_gusset_0.0.stl"
 
     def test_custom_hanger_tolerance(self):
         """Test filename with custom hanger_tolerance."""
         body = ShelfBracketDefinition(hanger_tolerance=0.2)
-        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120-original-hanger_tolerance_0.2.stl"
+        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120x41.5-original-hanger_tolerance_0.2.stl"
 
     def test_bolt_hole_disabled(self):
         """Test filename with bolt_hole disabled."""
         body = ShelfBracketDefinition(bolt_hole=False)
-        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120-original-bolt_hole.stl"
+        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120x41.5-original-bolt_hole.stl"
 
     def test_custom_top_mounting_holes(self):
         """Test filename with top_mounting_holes enabled."""
         body = ShelfBracketDefinition(top_mounting_holes=2)
-        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120-original-top_mounting_holes_2.stl"
+        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120x41.5-original-top_mounting_holes_2.stl"
 
     def test_custom_top_mounting_hole_diameter(self):
         """Test filename with custom top_mounting_hole_diameter."""
         body = ShelfBracketDefinition(top_mounting_holes=1, top_mounting_hole_diameter=5)
-        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120-original-top_mounting_holes_1_top_mounting_hole_diameter_5.0.stl"
+        assert make_shelf_bracket_filename(body) == "shelf-bracket-1x120x41.5-original-top_mounting_holes_1_top_mounting_hole_diameter_5.0.stl"
 
     def test_default_bolt_hole_not_in_filename(self):
         """Test that default bolt_hole=True doesn't appear in filename."""
@@ -199,4 +199,4 @@ class TestMakeShelfBracketFilename:
             bolt_hole=False,
         )
         filename = make_shelf_bracket_filename(body)
-        assert filename == "shelf-bracket-1x120-original-width_83.5_supports_3_bolt_hole.stl"
+        assert filename == "shelf-bracket-1x120x83.5-original-supports_3_bolt_hole.stl"

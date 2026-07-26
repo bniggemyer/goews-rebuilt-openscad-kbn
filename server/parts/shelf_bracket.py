@@ -31,12 +31,12 @@ class ShelfBracketDefinition(BaseModel):
 
 
 def make_shelf_bracket_filename(body: ShelfBracketDefinition) -> str:
-    parts = ["shelf-bracket", f"{body.height_units}x{body.depth}"]
+    parts = ["shelf-bracket", f"{body.height_units}x{body.depth}x{body.width}"]
     parts.append("original" if body.variant.to_int() == 0 else "thicker_cleats")
 
     options = []
     for name, info in type(body).model_fields.items():
-        if name in ("height_units", "depth", "variant"):
+        if name in ("height_units", "depth", "width", "variant"):
             continue
         val = getattr(body, name)
         if val != info.default:
